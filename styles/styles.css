@@ -58,6 +58,8 @@ h1 {
 #mainView {
     display: flex;
     justify-content: center;
+
+    touch-action: manipulation;
 }
 
 #etchASketchScreen {

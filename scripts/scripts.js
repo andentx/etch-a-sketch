@@ -68,8 +68,8 @@ function createCell(chosenGridSize) {
 
     newCell.addEventListener("touchstart", enableDraw)    
     newCell.addEventListener("touchstart", fillIn)
-    newCell.addEventListener("touchmove", fillIn)
-    // newCell.addEventListener("touchend", disableDraw)
+    newCell.addEventListener("touchenter", fillIn)
+    newCell.addEventListener("touchend", disableDraw)
     newCell.addEventListener("touchcancel", disableDraw)
 
     return newCell;

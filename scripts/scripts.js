@@ -31,8 +31,8 @@ function rgbaToArray(rgba) {
     return rgbaArray
 }
 
-function enableTouchscreen() {
-
+function resetTouch(e) {
+    e.preventDefault()
 }
 
 // Settings - Set to Defaults
@@ -69,7 +69,8 @@ function createCell(chosenGridSize) {
     newCell.addEventListener("touchstart", enableDraw)    
     newCell.addEventListener("touchstart", fillIn)
     newCell.addEventListener("touchenter", fillIn)
-    newCell.addEventListener("touchmove", fillIn)
+    // newCell.addEventListener("touchleave", fillIn)
+    newCell.addEventListener("touchmove", resetTouch)
     newCell.addEventListener("touchend", disableDraw)
     newCell.addEventListener("touchcancel", disableDraw)
 

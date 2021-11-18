@@ -31,7 +31,9 @@ function rgbaToArray(rgba) {
     return rgbaArray
 }
 
- 
+function enableTouchscreen() {
+
+}
 
 // Settings - Set to Defaults
 
@@ -159,43 +161,35 @@ function fillIn(e) {
     }
 }
 
-
 function disableDraw () {
     drawEnabled = false
 }
 
-
 function enableDraw () {
     drawEnabled = true
 }
-
 
 function setDrawColor(e) {
     currentSelectedDrawColor = e.target.value
     currentSelectedDrawColorInRGBA = hexToRgbA(currentSelectedDrawColor)
 }
 
-
 function setFrameColor(e) {
     etchASketchScreen.style.borderColor = e.target.value;
 }
-
 
 function setBackgroundColor(e) {
     etchASketchScreen.style.backgroundColor = e.target.value;
 }
 
-
 function setColorMode(e) {
     colorMode = e.target.value;
 }
-
 
 function getRandomColor() {
     let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     return randomColor;
 }
-
 
 function getColorFromOceanPalette() {
     let r = Math.floor(Math.random() * 20);
@@ -208,7 +202,6 @@ function getColorFromOceanPalette() {
     return rgba
 }
 
-
 function getColorFromSandPalette() {
     let r = (Math.floor(Math.random())+150);
     let g = (Math.floor(Math.random())+ 80);
@@ -219,7 +212,6 @@ function getColorFromSandPalette() {
 
     return rgba
 }
-
 
 function getColorFromSkyPalette() {
     let r = 0;
@@ -232,7 +224,6 @@ function getColorFromSkyPalette() {
     return rgba
 } 
 
-
 function getColorFromCloudsPalette() {
     let r = 20;
     let g = 20;
@@ -243,7 +234,6 @@ function getColorFromCloudsPalette() {
 
     return rgba
 } 
-
 
 function getColorFromTreesPalette() {
     let r = Math.floor(Math.random() * 10);
@@ -256,20 +246,17 @@ function getColorFromTreesPalette() {
     return rgba
 }
 
-
 function removeGridLines() {
     document.querySelectorAll(".gridCell").forEach(function(e) {
         e.style.outline = "none"
     })
 }
 
-
 function addGridLines() {
     document.querySelectorAll(".gridCell").forEach(function(e) {
         e.style.outline = "1px solid lightgrey"
     })
 }
-
 
 function clearScreen() {
     document.querySelectorAll(".gridCell").forEach(function(e) {
@@ -278,11 +265,9 @@ function clearScreen() {
     });
 }
 
-
 function askUserForGridSize() {
     return (parseInt(prompt("Enter Grid Size from 2-100"))) 
 }
-
 
 function setGridSize() {
     let chosenGridSize = askUserForGridSize()
@@ -293,7 +278,6 @@ function setGridSize() {
         return
     }
 }
-
 
 function toggleGridLineSwitch() {
     let gridLineSwitch = document.getElementById("gridLineSwitch")

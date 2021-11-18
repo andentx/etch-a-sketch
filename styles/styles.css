@@ -93,6 +93,157 @@ footer {
     padding: 10px 10px 10px 10px;
 }
 
+/* tools */
+
+/* Color chooser */
+
+input[type='color'] {
+    height: 34px;
+    border: solid black 3px;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+/* Custom dropdown  */
+
+.custom-dropdown {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.custom-dropdown select {
+    background-color: lightgrey;
+    border: 0;
+    color: #000;
+    font-size: inherit;
+    margin: 0;
+    padding: 0.5em;
+    padding-right: 2.5em;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: none;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+}
+
+.custom-dropdown::after {
+    content: '\25BC';
+    font-size: 0.625em;
+    line-height: 1;
+    height: 1em;
+    right: 1.2em;
+    top: 50%;
+    margin-top: -0.5em;
+}
+
+.custom-dropdown::before {
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.custom-dropdown select[disabled] {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-dropdown select[disabled]::after {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown::before {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.custom-dropdown::after {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* Sliding switch */
+
+label.switch {
+    margin: 0px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(220, 215, 210);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(180, 20, 20);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/*  Rectangle button */
+
+.button {
+    color: rgb(15, 60, 65);
+    background-color: rgb(250, 245, 240);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3px 18px;
+    border: 2px solid black;
+
+    height: 24px;
+
+    min-width: 130px;
+
+    transition: all 0.15s;
+}
+
+.button:hover {
+    background-color: rgb(220, 215, 210);
+}
+
 /*  Desktop Size Adjustments */
 
 @media screen and (min-width: 1000px) {
@@ -112,5 +263,9 @@ footer {
         align-items: center;
         margin: 5px 10px;
         width: auto;
+    }
+
+    .tool label {
+        margin-right: 0rem;
     }
 }
